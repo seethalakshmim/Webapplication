@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body>
+{%load static%}
+<style>
+.change
+{
+position: absolute;
+margin: 0;
+}
+.container-fluid
+{height:50px;
+}
+
+.heading{
+
+  text-align:center;
+  padding:20px;
+  color:white;
+
+  font-family: 'Fredericka the Great', cursive;
+  }
+footer
+ {
+ background-color:black;
+ padding:20px;
+ color:white;
+
+ }
+.bg-img {
+
+  background-image: url("{%static "Media/Coverimg1.jpg" %}");
+  min-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+.navbar
+{
+color:white;
+font-size:20px;
+
+}
+</style>
+
+
+
+<!--Navigation-->
+<div class="bg-img change">
+<nav class="navbar navbar-expand-lg navbar navbar-dark " >
+<div class="container-fluid" >
+       <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PHOTOGRAPHY</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="">TRAVEL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABOUT US</a>
+        </li>
+        </ul>
+       <!--<li class="nav-item" style="margin-left:40px; width:250px">
+       <input class="form-control mr-sm-2 form-inline" type="search" placeholder="What are you looking for?" aria-label="Search"  />
+       &nbsp;&nbsp;
+       </li>-->
+
+    </div>
+  </div>
+</nav>
+
+<div class="heading">
+  <h1>  A TRAVELLER'S DIARY</h1>
+</div>
+
+    <br><br><br><br><br>
+    <div class="header">
+        <h3 style="font-family: 'Fjalla One', sans-serif; text-align:center; font-size:50px; font-weight:bold;color:lavenderblush;">Capture the world. As <i>you</i> &nbsp;see it</h3>
+</div>
+    </div>
+{% block content %}
+<!--Content-->
+
+{% endblock content %}
+<footer>
+    <p style="text-align:right;">&copy;2021 AroundtheWorld.com <a href="#" style="color:white;">Terms</a>&middot; <a href="#"style="color:white;">Conditions</a></p>
+
+</footer>
+
+
+</body>
+</html>

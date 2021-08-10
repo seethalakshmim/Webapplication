@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+</head>
+<body>
+{% block sidebar%}
+{%load static%}
+<style>
+#Feature
+{
+  font-family: 'Fjalla One', sans-serif;
+
+  padding:40px;
+text-align:center;
+font-weight:bold;
+font-size:50px;
+}
+
+
+
+.image1{background-image: url("{%static "Media/Portrait.jpg" %}"); no-repeat;}
+.image2{background-image: url("{%static "Media/Bird.jpg" %}"); no-repeat;}
+.image3{background-image: url("{%static "Media/Night.jpg" %}"); no-repeat;}
+
+  .image{
+      margin-left:180px;
+      width:450px;
+      height:350px;
+
+    }
+    .text{
+      width:450px;
+      height:350px;
+      background:black;
+      opacity:0;
+    }
+
+    .image:hover .text
+    {
+      opacity:0.7;
+      text-align:justify;
+      color:white;
+      font-size:20px;
+      font-weight:100;
+
+    }
+.Tips{
+text-align:center;
+}
+
+<!--To add a blogpost section-->
+</style>
+<div>
+    <h3 id="Feature">Featured</h3>
+</div>
+
+
+
+  <div class="row" style="margin-left:30px;">
+    <div class="col-lg-3" >
+      <div class="image image1">
+   <div class="text">
+       <h4 style="text-align:center"> Portrait Photography</h4>
+       <br>
+       <p class="Tips">
+
+       Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit.
+       Praesent nec nisi dapibus,
+       commodo justo dictum, molestie
+       lacus.Duis ac lectus faucibus,
+       aliquet quam vitae, dapibus turpis.
+       Proin ut augue ex.
+        </p>
+
+   </div>
+</div>
+    </div>
+    <div class="col-lg-3">
+      <div class="image image2">
+   <div class="text">
+       <h4 style="text-align:center"> All about Shutterspeed</h4>
+       <br>
+       <p class="Tips">
+
+       Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit.
+       Praesent nec nisi dapibus,
+       commodo justo dictum, molestie
+       lacus.Duis ac lectus faucibus,
+       aliquet quam vitae, dapibus turpis.
+       Proin ut augue ex.
+        </p>
+
+   </div>
+</div>
+    </div>
+    <div class="col-lg-3">
+      <div class="image image3">
+   <div class="text">
+       <h4 style="text-align:center"> Enhance your Night photos</h4>
+       <br>
+       <p class="Tips">
+
+       Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit.
+       Praesent nec nisi dapibus,
+       commodo justo dictum, molestie
+       lacus.Duis ac lectus faucibus,
+       aliquet quam vitae, dapibus turpis.
+       Proin ut augue ex.
+        </p>
+
+   </div>
+</div>
+    </div>
+  </div>
+
+</body>
+{% endblock sidebar%}
+</html>

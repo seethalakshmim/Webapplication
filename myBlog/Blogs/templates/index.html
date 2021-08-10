@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Style+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<body>
+
+{% extends "base.html" %}
+{% block content %}
+
+
+<style>
+ .card:hover
+ {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+</style>
+
+<!--Code for displaying the blog posts to visitors-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-4 left">
+            {% for post in all_posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6"> {{ post.pub_date}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <a href="{% url 'Details' post.id %}" class="btn btn-primary" style="background-color:black; border:black">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+     </div>
+        </div>
+<br>
+<section>
+            {% block sidebar%} {% include 'side.html' %} {% endblock sidebar%}
+        </section>
+<br>
+{% endblock content %}
+
+</body>
+</html>

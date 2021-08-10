@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+<body>
+{% block navigation %} {% include 'Navigation.html' %} {% endblock navigation%}
+{% block content %}
+<style>
+    .card
+    {
+    margin-top:40px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
+    padding:12px;
+    }
+</style>
+<!--Code for displaying the selected blog post-->
+<div class="container">
+    <div class="card">
+       <h1 style="text-align:center">{{ Detailedview.title }}</h1>
+   <p > {{ Detailedview.pub_date}} </p>
+   <p >{{Detailedview.content}}</p>
+    </div>
+
+</div>
+{% block comment %} {% include 'comments_user.html'%} {% endblock comment %}
+{% endblock content %}
+</body>
+</html>
