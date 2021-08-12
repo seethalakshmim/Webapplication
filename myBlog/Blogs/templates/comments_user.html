@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+   #CommentHeading
+   {
+   text-align:left;
+   margin-left:10px;
+   }
+.Leavecomment
+{
+margin-left:10px;
+text-align:left;
+}
+</style>
+{% block comment %}
+
+<br><br>
+<h3 id="CommentHeading">Comments</h3>
+
+{% for c in comments %}
+<div>
+   <h6 style="font-weight:bold">{{c.name}}:</h6>
+    <p style="margin-left:10px;">{{c.comments}}</p>
+    <br>
+</div>
+{% endfor %}
+
+<div class="Leavecomment">
+    <form method="post" action=".">
+   <p><label for="name">Name:</label>
+    <input id="name" type="text" name="name" maxlength="100" required></p>
+        <p><label for="email">Email:</label>
+    <input type="email" name="email" maxlength="100" required></p>
+        <p><label for="comments">Comments:</label>
+    <input type="textarea" name="comments" maxlength="100" required></p>
+            {% csrf_token %}
+    <button type="submit" class="btn btn-dark">LEAVE A COMMENT</button>
+    </form>
+</div>
+
+{% endblock comment %}
+
+</body>
+</html>
